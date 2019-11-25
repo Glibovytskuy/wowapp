@@ -405,11 +405,6 @@ section#section1 .container {
   background: url("../src/assets/img/svg/arrow-down.svg") no-repeat center center;
 }
 
-/* No Touch devices */
-.cd-nav-trigger {
-  display: none;
-}
-
 #cd-vertical-nav ul{
   padding-left: 5px;
   margin: 5px 0;
@@ -490,47 +485,13 @@ section#section1 .container {
 }
 
 /* Touch devices */
-.touch .cd-nav-trigger {
-  display: block;
+.chat {
+  cursor: pointer;
   z-index: 2;
   position: fixed;
   bottom: 30px;
-  right: 5%;
-  height: 44px;
-  width: 44px;
-  border-radius: 0.25em;
-  background: rgba(255, 255, 255, 0.9);
-}
-.touch .cd-nav-trigger span {
-  position: absolute;
-  height: 4px;
-  width: 4px;
-  background-color: #3e3947;
-  border-radius: 50%;
-  left: 50%;
-  top: 50%;
-  bottom: auto;
-  right: auto;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
-.touch .cd-nav-trigger span::before, .touch .cd-nav-trigger span::after {
-  content: '';
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  background-color: inherit;
-  border-radius: inherit;
-}
-.touch .cd-nav-trigger span::before {
-  top: -9px;
-}
-.touch .cd-nav-trigger span::after {
-  bottom: -9px;
+  right: 3%;
+  width: 50px;
 }
 
 .touch #cd-vertical-nav {
@@ -564,27 +525,6 @@ section#section1 .container {
 .touch #cd-vertical-nav.open {
   transform: scale(1);
 }
-.touch #cd-vertical-nav.open + .cd-nav-trigger {
-  background-color: transparent;
-}
-.touch #cd-vertical-nav.open + .cd-nav-trigger span {
-  background-color: rgba(62, 57, 71, 0);
-}
-.touch #cd-vertical-nav.open + .cd-nav-trigger span::before, .touch #cd-vertical-nav.open + .cd-nav-trigger span::after {
-  background-color: #3e3947;
-  height: 3px;
-  width: 20px;
-  border-radius: 0;
-  left: -8px;
-}
-.touch #cd-vertical-nav.open + .cd-nav-trigger span::before {
-  transform: rotate(45deg);
-  top: 1px;
-}
-.touch #cd-vertical-nav.open + .cd-nav-trigger span::after {
-  transform: rotate(135deg);
-  bottom: 0;
-}
 .touch #cd-vertical-nav li:last-child a {
   border-bottom: none;
 }
@@ -610,9 +550,6 @@ section#section1 .container {
   }
   .container {
     width: 750px;
-  }
-  .touch .cd-nav-trigger, .touch #cd-vertical-nav {
-    bottom: 40px;
   }
 }
 @media (min-width: 992px) {
