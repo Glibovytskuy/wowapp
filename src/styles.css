@@ -85,10 +85,6 @@ Modules - reusable parts of our design
 Main components 
 
 -------------------------------- */
-.container {
-  padding: 8px 0;
-}
-
 header {
   position: fixed;
   display: flex;
@@ -132,12 +128,11 @@ header {
 
 /*Section1 Styles*/
 .cd-section#section1 {
-  top: 100px;
   min-height: 93vh;
 }
 
-section#section1 .container {
-  top: 38%;
+#section1 .container {
+  margin-top: 60px;
 }
 
 .section1-left-block {
@@ -148,7 +143,7 @@ section#section1 .container {
 }
 
 #section1 .cd-scroll-down {
-  bottom: 120px;
+  bottom: 5px;
 }
 
 .promo {
@@ -173,6 +168,13 @@ section#section1 .container {
   flex-direction: column;
   align-items: center;
   margin: 0 3% 0 10%;
+}
+
+.image-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 50%;
 }
 
 .section2-left-block div img {
@@ -209,6 +211,10 @@ section#section1 .container {
 /**************End Section2 Styles**************/
 
 /*Section3 Styles*/
+#section3 .container {
+  margin-top: 40px;
+}
+
 .section3-subtitle {
   margin-bottom: 30px;
   font-weight: 600;
@@ -286,6 +292,8 @@ section#section1 .container {
 
 .squares-block .row {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .row.mb5 {
@@ -323,7 +331,7 @@ section#section1 .container {
 }
 
 .avaliable-btn img {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .logo {
@@ -389,12 +397,6 @@ section#section1 .container {
   flex-direction: column;
 }
 
-/* 
-.cd-section:nth-of-type(even) {
-  background: rgb(140,82,255);
-  background: linear-gradient(0deg, rgba(140,82,255,1) 0%, rgba(186,104,215,1) 100%);
-} */
-
 .cd-scroll-down {
   position: absolute;
   left: 50%;
@@ -411,7 +413,7 @@ section#section1 .container {
   margin: 5px 0;
 }
 
-.no-touch #cd-vertical-nav {
+#cd-vertical-nav {
   position: fixed;
   right: 40px;
   top: 50%;
@@ -424,43 +426,43 @@ section#section1 .container {
   z-index: 1;
 }
 
-.no-touch #cd-vertical-nav li {
+#cd-vertical-nav li {
   text-align: right;
 }
 
-.no-touch #cd-vertical-nav a {
+#cd-vertical-nav a {
   backface-visibility: hidden;
 }
 
-.no-touch #cd-vertical-nav a:after {
+#cd-vertical-nav a:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.no-touch #cd-vertical-nav a span {
+#cd-vertical-nav a span {
   float: right;
   transform: scale(.5);
 }
 
-.no-touch #cd-vertical-nav a:hover span {
+#cd-vertical-nav a:hover span {
   background-color: #fff;
   transform: scale(.8);
 }
 
-.no-touch #cd-vertical-nav a:hover .cd-label {
+#cd-vertical-nav a:hover .cd-label {
   opacity: 1;
   background: none;
 }
 
-.no-touch #cd-vertical-nav a.is-selected .cd-dot {
+#cd-vertical-nav a.is-selected .cd-dot {
   background-color: #fff;
 }
 
-.no-touch #cd-vertical-nav .cd-dot {
+#cd-vertical-nav .cd-dot {
   position: relative;
   /* we set a top value in order to align the dot with the label. If you change label's font, you may need to change this top value*/
-  top: 8px;
+  top: 7px;
   margin-top: 7px;
   height: 15px;
   width: 15px;
@@ -470,7 +472,7 @@ section#section1 .container {
   transform-origin: 50% 50%;
 }
 
-.no-touch #cd-vertical-nav .cd-label {
+#cd-vertical-nav .cd-label {
   position: relative;
   margin-right: 10px;
   margin-top: 5px;
@@ -489,11 +491,6 @@ section#section1 .container {
   transform-origin: 100% 50%;
 }
 
-#cd-vertical-nav .cd-label {
-  color: #333;
-}
-
-/* Touch devices */
 .chat {
   cursor: pointer;
   z-index: 2;
@@ -501,46 +498,6 @@ section#section1 .container {
   bottom: 30px;
   right: 3%;
   width: 50px;
-}
-
-.touch #cd-vertical-nav {
-  position: fixed;
-  z-index: 1;
-  right: 5%;
-  bottom: 30px;
-  width: 90%;
-  max-width: 300px;
-  max-height: 90%;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  transform-origin: right bottom;
-  transform: scale(0);
-  transition-property: transform;
-  transition-duration: 0.2s;
-  border-radius: 0.25em;
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-.touch #cd-vertical-nav a {
-  display: block;
-  padding: 1em;
-  border-bottom: 1px solid rgba(62, 57, 71, 0.1);
-}
-
-.touch #cd-vertical-nav a span:first-child {
-  display: none;
-}
-
-.touch #cd-vertical-nav a.is-selected span:last-child {
-  color: #333;
-}
-
-.touch #cd-vertical-nav.open {
-  transform: scale(1);
-}
-
-.touch #cd-vertical-nav li:last-child a {
-  border-bottom: none;
 }
 
 .container {
@@ -553,14 +510,7 @@ section#section1 .container {
 
 @media (min-width: 768px) {
   section .container {
-    position: absolute;
-    left: 50%;
-    top: 46%;
-    bottom: auto;
-    right: auto;
-    transform: translateX(-50%) translateY(-50%);
-    width: 90%;
-    text-align: center;
+    width: 100%; 
   }
 
   .container {
@@ -575,8 +525,19 @@ section#section1 .container {
 }
 
 @media (min-width: 1200px) {
+  section .container {
+    width: 90%; 
+    text-align: center;
+    margin-top: 90px;
+  }
   .container {
     width: 1170px;
+  }
+}
+
+@media (max-width: 992px) {
+  .image-wrapper {
+    width: 63%;
   }
 }
 
@@ -631,6 +592,8 @@ section#section1 .container {
   }
 
   .avaliable-btn {
+    display: flex;
+    justify-content: center;
     padding: 9px 7px;
   }
 
@@ -638,17 +601,7 @@ section#section1 .container {
     margin-right: 2%;
   }
 
-  .avaliable-btn.app-store img {
-    margin-left: 10px;
-    margin-right: 12px;
-  }
-
-  .avaliable-btn.google-play img {
-    margin-left: 5px;
-  }
-
   .avaliable-btn img {
-    margin-right: 10px;
     width: 20px;
   }
 
@@ -662,9 +615,6 @@ section#section1 .container {
   }
 
   /*section1*/
-  .cd-section#section1 {
-    top: auto;
-  }
 
   .section1-left-block {
     width: auto;
@@ -696,6 +646,10 @@ section#section1 .container {
   .section2-left-block p {
     width: 100%;
   }
+
+  .image-wrapper {
+    width: 53%;
+  }
   /***************End Section2 Styles**************/
 
   /*section3*/
@@ -711,13 +665,14 @@ section#section1 .container {
   /***************End Section4 Styles**************/
 
   /*section5*/
-  .squares-block .row {
-    flex-direction: column;
-  }
 
   .row.mb5 {
     margin-bottom: 1rem;
   }
 
   /***************End Section5 Styles**************/
+}
+
+@media (max-width: 475px) {
+
 }
